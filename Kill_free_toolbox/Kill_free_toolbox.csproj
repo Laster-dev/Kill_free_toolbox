@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FDF05CB-48A1-49EF-8690-30B07C8C5DA5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Kill_free_toolbox</RootNamespace>
+    <AssemblyName>Kill_free_toolbox</AssemblyName>
+    <Nullable>enable</Nullable>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Authorization\Weixin.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet.Dynamic\DynamicCilOperandResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet.Dynamic\DynamicMethodDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet.Dynamic\DynamicMethodHelper.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet.Dynamic\DynamicTypeSignatureReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet.Dynamic\FieldReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\AssemblyDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\AssemblyDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\AssemblyReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\AssemblyResolverBase.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Discovery\MemberDiscoverer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Discovery\MemberDiscoveryFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Discovery\MemberDiscoveryResult.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\DotNetDirectoryBuffer.CodedIndices.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\DotNetDirectoryBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\DotNetDirectoryBuffer.MemberTree.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\DotNetDirectoryBuffer.TokenProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\DotNetDirectoryBuildResult.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\DotNetDirectoryFactory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\IDotNetDirectoryFactory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\IPEImageBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\ITokenMapping.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\ManagedPEImageBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\MetadataBuilderException.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\MetadataBuilderFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\BlobStreamBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\DistinctMetadataTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\GuidStreamBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\IMetadataBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\IMetadataStreamBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\IMetadataTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\ISortedMetadataTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\MemberNotImportedException.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\MetadataBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\MetadataStreamBufferHelper.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\SortedMetadataTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\StringIndex.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\StringsStreamBlob.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\StringsStreamBlobFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\StringsStreamBlobSuffixComparer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\StringsStreamBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\TablesStreamBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\UnsortedMetadataTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Metadata\UserStringsStreamBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\PEImageBuildContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\PEImageBuildResult.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\Resources\DotNetResourcesDirectoryBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\TokenMapping.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Builder\VTableFixups\VTableFixupsBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Bundles\BundleAssemblyResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Bundles\BundleFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Bundles\BundleFileType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Bundles\BundleManifest.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Bundles\BundleManifestFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Bundles\BundlerParameters.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Bundles\SerializedBundleFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Bundles\SerializedBundleManifest.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ClassLayout.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\AssignTokensClonerListener.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\CallbackClonerListener.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\CloneContextAwareReferenceImporter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\FieldRvaCloner.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\IFieldRvaCloner.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\IMemberClonerListener.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\InjectTypeClonerListener.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\MemberCloneContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\MemberCloner.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\MemberCloner.Fields.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\MemberCloner.Methods.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\MemberCloner.Semantics.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\MemberCloneResult.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\MemberClonerListener.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Cloning\MemberClonerListenerList.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilExceptionHandler.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilExceptionHandlerType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilInstructionCollection.Add.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilInstructionCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilInstructionCollection.Insert.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilInstructionExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilLabelVerifier.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilLocalVariable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilLocalVariableCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilMaxStackCalculator.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilMethodBody.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilMethodBodyBuildFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilMethodBodySerializer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\CilOperandBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\IMetadataTokenProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\InvalidCilInstructionException.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\OriginalMetadataTokenProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\PhysicalCilOperandResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Cil\StackImbalanceException.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\IMethodBodySerializer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\MethodBody.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\MethodBodySerializationContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\MultiMethodBodySerializer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Native\INativeSymbolsProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Native\NativeLocalSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Native\NativeMethodBody.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Native\NativeMethodBodySerializer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\Native\NativeSymbolsProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Code\UnresolvedMethodBody.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Collections\LazyRidListRelation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Collections\MemberCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Collections\MethodSemanticsCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Collections\Parameter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Collections\ParameterCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Config\Json\RuntimeConfiguration.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Config\Json\RuntimeConfigurationSerializerContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Config\Json\RuntimeFramework.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Config\Json\RuntimeOptions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Config\Json\SimpleJson.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Constant.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\CustomAttribute.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\DefaultMetadataResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\DotNetCoreAssemblyResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\DotNetCorePathProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\DotNetFrameworkAssemblyResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\DotNetRuntimeInfo.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\EventDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ExportedType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\FieldDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\FileReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\GacDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\GenericParameter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\GenericParameterConstraint.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\HasCustomAttributeExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IAssemblyResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ICustomAttributeType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IFieldDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IFullNameProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IHasConstant.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IHasCustomAttribute.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IHasFieldMarshal.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IHasGenericParameters.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IHasSecurityDeclaration.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IHasSemantics.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IImplementation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IImportable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IManagedEntryPoint.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IMemberDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IMemberDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IMemberForwarded.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IMemberRefParent.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IMetadataMember.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IMetadataResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IMethodDefOrRef.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IMethodDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IModuleProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ImplementationMap.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\INameProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\InterfaceImplementation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\InvalidTypeDefOrRef.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\InvalidTypeSignatureError.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\IResolutionScope.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ITypeDefOrRef.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ITypeDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\KnownCorLibs.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\KnownRuntimeNames.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\KnownRuntimeVersions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ManifestResource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\MemberNameGenerator.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\MemberReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Memory\CyclicStructureException.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Memory\FieldMemoryLayout.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Memory\MemoryLayoutAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Memory\TypeAlignmentDetector.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Memory\TypeMemoryLayout.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Memory\TypeMemoryLayoutDetection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Memory\TypeMemoryLayoutDetector.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\MetadataMember.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\MethodDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\MethodExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\MethodImplementation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\MethodSemantics.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\MethodSpecification.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ModuleDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ModuleReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ParameterDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\PropertyDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ReferenceImporter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ReflectionAssemblyDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\ReflectionHacks.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\RequiresUnreferencedCodeAttribute.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\DefaultResourceDataSerializer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\IntrinsicResourceType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\IResourceDataSerializer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\KnownResourceReaderNames.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\ResourceManagerHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\ResourceSet.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\ResourceSetEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\ResourceSetEntryHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\ResourceType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\ResourceTypeCode.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\SerializedResourceSet.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\SerializedResourceSetEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Resources\UserDefinedResourceType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\RuntimeContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\SafeExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\SecurityDeclaration.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\CachedSerializedMemberFactory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\DefaultMethodBodyReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\DirectoryNetModuleResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\IMethodBodyReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\INetModuleResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\ModuleReaderContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\ModuleReaderParameters.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedAssemblyDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedAssemblyReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedClassLayout.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedConstant.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedCustomAttribute.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedEventDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedExportedType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedFieldDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedFileReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedGenericParameter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedGenericParameterConstraint.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedImplementationMap.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedInterfaceImplementation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedManifestResource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedMemberReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedMethodDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedMethodSemantics.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedMethodSpecification.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedModuleDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedModuleDefinition.Metadata.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedModuleReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedParameterDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedPropertyDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedSecurityDeclaration.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedStandAloneSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedTypeDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedTypeReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Serialized\SerializedTypeSpecification.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ArrayBaseTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ArrayDimension.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ArrayTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\BlobReaderContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\BlobSerializationContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\BlobSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\BoxedArgument.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\BoxedTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ByReferenceTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CallingConventionAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CallingConventionSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ComInterfaceMarshalDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CorLibTypeFactory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CorLibTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CustomAttributeArgument.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CustomAttributeArgumentMemberType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CustomAttributeNamedArgument.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CustomAttributeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CustomMarshalDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\CustomModifierTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\DataBlobSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ExtendableBlobSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\FieldSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\FixedArrayMarshalDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\FixedSysStringMarshalDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\FunctionPointerTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\GenericContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\GenericInstanceMethodSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\GenericInstanceTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\GenericParameterSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\GenericParameterType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\GenericTypeActivator.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\IGenericArgumentsProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\InvalidBlobSignatureException.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ITypeCodedIndexProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ITypeSignatureResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ITypeSignatureVisitor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\ITypeSignatureVisitorState.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\LocalVariablesSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\LPArrayFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\LPArrayMarshalDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\MarshalDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\MemberSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\MethodSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\MethodSignatureBase.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\NativeType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\CustomAttributeArgumentReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\CustomAttributeArgumentWriter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\ParsedTypeFullName.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\TypeAnnotation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\TypeAnnotationType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\TypeName.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\TypeNameBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\TypeNameLexer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\TypeNameParser.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\TypeNameTerminal.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\Parsing\TypeNameToken.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\PermissionSetSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\PhysicalTypeSignatureResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\PinnedTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\PointerTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\PropertySignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SafeArrayMarshalDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SafeArrayTypeFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SafeArrayVariantType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SecurityAttribute.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SentinelTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SerializedCustomAttributeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SignatureComparer.CallingConventionSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SignatureComparer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SignatureComparer.MemberReferences.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SignatureComparer.ResolutionScope.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SignatureComparer.TypeDefOrRef.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SignatureComparer.TypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SignatureComparisonFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SimpleMarshalDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\SzArrayTypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\TypeDefOrRefSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\TypeSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\Signatures\TypeSpecificationSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\StandAloneSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\TokenAllocator.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\TypeDefinition.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\TypeDescriptorExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\TypeReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\TypeSpecification.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.DotNet\UnmanagedExportInfo.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\Characteristics.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\DataDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\DataDirectoryIndex.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\DllCharacteristics.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\DosHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\FileHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\MachineType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\OptionalHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\OptionalHeaderMagic.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\PEFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\PEMappingMode.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\PESection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\PESectionCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\PESegmentReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\SectionFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\SectionHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\SerializedPEFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.File\SubSystem.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Icon\IconEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Icon\IconGroup.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Icon\IconResource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Icon\IconType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Icon\SerializedIconEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Icon\SerializedIconGroup.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\IWin32Resource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\FileFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\FileOS.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\FileSubType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\FileType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\FixedVersionInfo.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\StringFileInfo.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\StringTable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\VarFileInfo.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\VarTable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\VersionInfoResource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\VersionTableEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\VersionTableEntryHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE.Win32Resources\Version\VersionTableValueType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Builder\IPEFileBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Builder\ManagedPEFileBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Builder\MethodBodyTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Builder\PEFileBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Builder\PEFileBuilderContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Builder\TrampolineTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Builder\UnmanagedPEFileBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Certificates\AttributeCertificate.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Certificates\CertificateCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Certificates\CertificateRevision.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Certificates\CertificateType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Certificates\CustomAttributeCertificate.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Certificates\DefaultCertificateReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Certificates\ICertificateReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Code\AddressFixup.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Code\AddressFixupExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Code\AddressFixupPatch.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Code\AddressFixupType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Code\CodeSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\Builder\DebugDirectoryBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\CodeViewDataSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\CodeViewSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\CustomDebugDataSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\DebugDataEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\DebugDataType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\DefaultDebugDataReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\EmptyDebugDataSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\IDebugDataReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\IDebugDataSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\RsdsDataSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Debug\SerializedDebugDataEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilAssembler.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilCode.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilDisassembler.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilExtraSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilExtraSectionAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilFlowControl.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilInstruction.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilInstructionCollectionExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilInstructionFormatter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilInstructionLabel.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilMethodBodyAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilOffsetLabel.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilOpCode.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilOpCodeNames.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilOpCodes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilOpCodeType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilOperandType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilRawFatMethodBody.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilRawMethodBody.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilRawTinyMethodBody.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\CilStackBehaviour.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\EmptyOperandResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\ICilInstructionFormatter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\ICilLabel.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\ICilOperandBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Cil\ICilOperandResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\CustomManagedNativeHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\DotNetDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\DotNetDirectoryFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\DotNetDirectoryFlagsExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\DotNetEntryPoint.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\IManagedNativeHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ManagedNativeHeaderSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\BlobStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\CustomMetadataStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\DefaultMetadataStreamReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\FieldRvaDataReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\GuidStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\IFieldRvaDataReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\ILazyMetadataStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\IMetadataStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\IMetadataStreamReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\MetadataDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\MetadataHeap.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\MetadataReaderContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\MetadataSignature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\MetadataStreamHeader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\MetadataStreamList.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\MetadataStreamReaderFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\PdbStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\SerializedBlobStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\SerializedGuidStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\SerializedMetadataDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\SerializedPdbStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\SerializedStringsStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\SerializedTableStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\SerializedUserStringsStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\StringsStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\TablesStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\TablesStream.Tables.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\TablesStreamFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\AssemblyAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\AssemblyDefinitionRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\AssemblyHashAlgorithm.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\AssemblyOSRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\AssemblyProcessorRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\AssemblyReferenceRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\AssemblyRefOSRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\AssemblyRefProcessorRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ClassLayoutRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\CodedIndex.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ColumnLayout.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ColumnType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ConstantRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\CustomAttributeRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\CustomDebugInformationRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\DeltaFunctionCode.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\DocumentRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ElementType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\EncLogRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\EncMapRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\EventAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\EventDefinitionRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\EventMapRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\EventPointerRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ExportedTypeRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\FieldAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\FieldDefinitionRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\FieldLayoutRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\FieldMarshalRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\FieldPointerRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\FieldRvaRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\FileAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\FileReferenceRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\GenericParameterAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\GenericParameterConstraintRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\GenericParameterRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\IMetadataRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\IMetadataTable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ImplementationMapAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ImplementationMapRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ImportScopeRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\IndexEncoder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\InterfaceImplementationRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\LocalConstantRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\LocalScopeRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\LocalVariableAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\LocalVariableRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ManifestResourceAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ManifestResourceRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MemberReferenceRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MetadataRange.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MetadataRowColumnEnumerator.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MetadataTable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MetadataToken.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodDebugInformationRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodDefinitionRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodImplAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodImplementationRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodPointerRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodSemanticsAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodSemanticsRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\MethodSpecificationRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ModuleDefinitionRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ModuleReferenceRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\NestedClassRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ParameterAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ParameterDefinitionRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\ParameterPointerRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\PropertyAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\PropertyDefinitionRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\PropertyMapRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\PropertyPointerRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\SecurityAction.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\SecurityDeclarationRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\SerializedMetadataTable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\StandAloneSignatureRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\StateMachineMethodRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\TableIndex.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\TableIndexExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\TableLayout.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\TypeAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\TypeDefinitionRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\TypeReferenceHash.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\TypeReferenceRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\Tables\TypeSpecificationRow.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Metadata\UserStringsStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\CompilerIdentifierSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\CustomReadyToRunSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\DebugInfo.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\DebugInfoAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\DebugInfoBounds.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\DebugInfoSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\DebugInfoVariable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\DebugInfoVariableLocation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\DebugInfoVariableLocationType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\DefaultReadyToRunSectionReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ImportSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ImportSectionAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ImportSectionsSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ImportSectionType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\IReadyToRunSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\IReadyToRunSectionReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\MethodEntryPoint.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\MethodEntryPointsSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\MethodFixup.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\NativeArray.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\NativeFormat.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\NibbleReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\NibbleWriter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ReadyToRunAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ReadyToRunDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ReadyToRunFixupKind.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ReadyToRunHelper.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\ReadyToRunSectionType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\RuntimeFunctionsSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\SerializedDebugInfo.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\SerializedDebugInfoSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\SerializedImportSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\SerializedImportSectionsSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\SerializedMethodEntryPointsSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\SerializedReadyToRunDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\ReadyToRun\SerializedX64RuntimeFunctionsSection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Resources\DotNetResourcesDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\Resources\SerializedDotNetResourcesDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\SerializedDotNetDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\StrongName\RsaPublicKeyMagic.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\StrongName\SignatureAlgorithm.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\StrongName\StrongNameDataHashBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\StrongName\StrongNameKeyStructure.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\StrongName\StrongNameKeyStructureType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\StrongName\StrongNamePrivateKey.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\StrongName\StrongNamePublicKey.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\StrongName\StrongNameSigner.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\VTableFixups\VTableFixup.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\VTableFixups\VTableFixupsDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\VTableFixups\VTableTokenCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\DotNet\VTableFixups\VTableType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exceptions\ExceptionDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exceptions\IExceptionDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exceptions\IRuntimeFunction.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exceptions\X64ExceptionDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exceptions\X64RuntimeFunction.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exceptions\X64UnwindFlags.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exceptions\X64UnwindInfo.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exports\Builder\ExportAddressTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exports\Builder\ExportDirectoryBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exports\Builder\NameTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exports\Builder\OrdinalNamePointerTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exports\ExportDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exports\ExportedSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exports\ExportedSymbolCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Exports\SerializedExportDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\Builder\HintNameTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\Builder\IImportAddressProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\Builder\ImportAddressDirectoryBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\Builder\ImportDirectoryBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\Builder\ImportDirectoryBufferBase.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\Builder\ThunkTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\DefaultSymbolResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\DelegatedSymbolClassifier.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\EmptySymbolResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\IImportedSymbolClassifier.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\ImportedModule.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\ImportedSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\ImportedSymbolType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\ImportHash.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\ISymbolResolver.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\SerializedImportedModule.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Imports\SerializedImportedModuleList.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\PEImage.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\PEReaderContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\PEReaderParameters.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Platforms\AddressTableInitializerStub.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Platforms\Amd64Platform.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Platforms\I386Platform.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Platforms\Platform.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Relocations\BaseRelocation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Relocations\Builder\RelocationBlock.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Relocations\Builder\RelocationEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Relocations\Builder\RelocationsDirectoryBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Relocations\RelocatableSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Relocations\RelocatableSegmentBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Relocations\RelocationType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Relocations\SerializedRelocationList.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\SerializedPEImage.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Tls\SerializedTlsDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Tls\TlsCharacteristics.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Tls\TlsDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\Builder\ResourceDataTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\Builder\ResourceDirectoryBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\Builder\ResourceDirectoryTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\Builder\ResourceNameTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\Builder\ResourceTableBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\IResourceEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\ResourceData.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\ResourceDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\ResourceDirectoryEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\ResourceType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\SerializedResourceData.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.PE\Win32Resources\SerializedResourceDirectory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\ICodeViewSymbolProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\ArgumentListLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\ArrayTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\BaseClassField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\BitFieldTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\BuildInfoLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\ClassTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewCallingConvention.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewCompositeTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewDataField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewDerivedTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewFieldAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewLeafKind.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewNamedField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\CodeViewTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\EnumerateField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\EnumTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\FieldListLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\FunctionIdentifier.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\ICodeViewLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\IIpiLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\InstanceDataField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\ITpiLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\MemberFunctionAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\MemberFunctionLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\MethodListEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\MethodListLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\ModifierAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\ModifierTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\NestedTypeField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\NonOverloadedMethod.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\OverloadedMethod.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\PointerAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\PointerTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\ProcedureTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedArgumentListLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedArrayTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedBaseClassField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedBitFieldTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedBuildInfoLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedClassTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedEnumerateField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedEnumTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedFieldListLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedFunctionIdentifier.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedInstanceDataField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedMemberFunctionLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedMethodListEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedMethodListLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedModifierTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedNestedTypeField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedNonOverloadedMethod.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedOverloadedMethod.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedPointerTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedProcedureTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedStaticDataField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedStringIdentifier.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedSubStringListLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedUnionTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedVBaseClassField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedVTableField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\Serialized\SerializedVTableShapeLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\SimpleTypeKind.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\SimpleTypeMode.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\SimpleTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\StaticDataField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\StringIdentifier.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\StructureAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\SubStringListLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\UnionTypeRecord.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\UnknownCodeViewLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\VBaseClassField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\VTableField.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\VTableShapeEntry.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Leaves\VTableShapeLeaf.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\DbiAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\DbiStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\DbiStreamVersion.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\ModuleDescriptor.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\ModuleDescriptorAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\SectionContribution.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\SectionContributionStreamVersion.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\SectionMap.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\SectionMapAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\SerializedDbiStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Dbi\SourceFileCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Info\InfoStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Info\InfoStreamVersion.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Info\PdbFeature.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Info\SerializedInfoStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Modi\ModiStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Modi\SerializedModiStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\PdbHash.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\PdbHashTable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Tpi\SerializedTpiStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Tpi\TpiStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Metadata\Tpi\TpiStreamVersion.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\Builder\FreeBlockMap.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\Builder\IMsfFileBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\Builder\MsfFileBuffer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\Builder\SequentialMsfFileBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\MsfFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\MsfStream.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\MsfStreamDataSource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\MsfSuperBlock.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Msf\SerializedMsfFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\PdbImage.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\PdbModule.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\PdbReaderContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\PdbReaderParameters.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\PdbSourceFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\BasePointerRelativeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\BinaryAnnotation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\BinaryAnnotationOpCode.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\BuildInfoSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\CallSiteSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\CodeViewSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\CodeViewSymbolType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\CoffGroupSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Compile2Symbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Compile3Symbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\CompileAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\CompileSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\ConstantSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\CpuType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\DataSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\DefinitionRangeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\EnvironmentBlockSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\FileStaticSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\FrameCookieSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\FrameCookieType.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\FramePointerRangeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\FrameProcedureAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\FrameProcedureSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\FunctionListSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\ICodeViewSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\InlineSiteSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\IRegisterRelativeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\IScopeCodeViewSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\IVariableSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\LabelSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\LocalAddressGap.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\LocalAddressRange.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\LocalAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\LocalSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\ObjectNameSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\ProcedureAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\ProcedureReferenceSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\ProcedureSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\PublicSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\PublicSymbolAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\RegisterRangeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\RegisterRelativeRangeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\RegisterRelativeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\RegisterSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\SectionSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedBasePointerRelativeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedBuildInfoSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedCallSiteSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedCoffGroup.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedCompile2Symbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedCompile3Symbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedConstantSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedDataSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedEnvironmentBlockSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedFileStaticSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedFrameCookieSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedFramePointerRangeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedFrameProcedureSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedFunctionListSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedInlineSiteSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedLabelSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedLocalSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedObjectNameSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedProcedureReferenceSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedProcedureSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedPublicSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedRegisterRangeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedRegisterRelativeRangeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedRegisterRelativeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedRegisterSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedSectionSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedThunkSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedUserDefinedTypeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SerializedUsingNamespaceSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\Serialized\SymbolStreamReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\SourceLanguage.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\ThunkOrdinal.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\ThunkSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\UnknownSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\UserDefinedTypeSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\Records\UsingNamespaceSymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\SerializedPdbImage.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver.Symbols.Pdb\SerializedPdbModule.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\ByteArrayEqualityComparer.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\BitList.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\IOwnedCollectionElement.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\LazyList.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\OneToManyRelation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\OneToOneRelation.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\OwnedCollection.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\ReferenceTable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\ReferenceTableAttributes.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Collections\RefList.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\DataSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\DataSourceSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\DiagnosticBag.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\EmptyErrorListener.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IErrorListener.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IndexSize.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IOffsetConverter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IOffsetProvider.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\BinaryStreamReader.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\BinaryStreamWriter.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\ByteArrayDataSource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\ByteArrayFileService.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\ByteArrayInputFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\DataSourceExtensions.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\DataSourceSlice.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\DisplacedDataSource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\IDataSource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\IFileService.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\IInputFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\ISpanDataSource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\MemoryMappedFileService.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\MemoryMappedInputFile.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\MemoryStreamWriterPool.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\UncachedFileService.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\UnmanagedDataSource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IO\ZeroesDataSource.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IReadableSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\ISegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\ISegmentReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\ISegmentReferenceFactory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\ISymbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\IWritable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\LazyVariable.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\OffsetRange.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Patching\BytesPatch.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Patching\IPatch.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Patching\PatchContext.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Patching\PatchedSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Patching\SegmentPatch.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\RelativeReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\RelocationParameters.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\SegmentBase.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\SegmentBuilder.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\SegmentReference.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\AggregateException.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\ArrayShim.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\MemoryMappedFileShim.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\MemoryMappedFileShim.Unix.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\MemoryMappedFileShim.Windows.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\PathShim.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\RuntimeInformationShim.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\StringShim.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Shims\VersionShim.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Symbol.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\ThrowErrorListener.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\Utf8String.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\VirtualAddress.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\VirtualAddressFactory.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\VirtualSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\AsmResolver\ZeroesSegment.cs" />
+    <Compile Include="Helper\AsmResolverLib\MemberNotNullAttributes.cs" />
+    <Compile Include="Helper\Baijiahei\CodeRenderer.cs" />
+    <Compile Include="Helper\Baijiahei\IATCodeGenerator.cs" />
+    <Compile Include="Helper\Baijiahei\PEAnalyzer.cs" />
+    <Compile Include="Helper\Baijiahei\UIHelper.cs" />
+    <Compile Include="Helper\Baijiahei\Unlook.cs" />
+    <Compile Include="Helper\Baijiahei\WhiteFileSearcher.cs" />
+    <Compile Include="Helper\Baijiahei\DotNetSearchResult.cs" />
+    <Compile Include="Helper\Baijiahei\DotNetWhiteFileSearcher.cs" />
+    <Compile Include="Helper\Bin2head\CSharp\Bin2head.cs" />
+    <Compile Include="Helper\Bin2head\Golang\Bin2head.cs" />
+    <Compile Include="Helper\Bin2head\JavaScript\Bin2head.cs" />
+    <Compile Include="Helper\Bin2head\Python\Bin2head.cs" />
+    <Compile Include="Helper\Bin2head\Rust\Bin2head.cs" />
+    <Compile Include="Helper\ClipboardHelper.cs" />
+    <Compile Include="Helper\DefenderScanner\DefenderScanner.cs" />
+    <Compile Include="Helper\LoaderBuild\deop.cs" />
+    <Compile Include="Helper\LoaderBuild\LoaderBbuild.cs" />
+    <Compile Include="Helper\MsvcDemangler\IATHijackCodeRewriter.cs" />
+    <Compile Include="Helper\MsvcDemangler\MsvcDemanglerHelper.cs" />
+    <Compile Include="Helper\PengCode\x64_bin.cs" />
+    <Compile Include="Helper\PengCode\x86_bin.cs" />
+    <Compile Include="Helper\PE\PEParser.cs" />
+    <Compile Include="Helper\PowershellObf\PowershellObf.cs" />
+    <Compile Include="Helper\RubbishCodeGenerator\CSharp.cs" />
+    <Compile Include="Helper\StringObf\CSharp\StringObf.cs" />
+    <Compile Include="Helper\Bin2head\C\Bin2head.cs" />
+    <Compile Include="Helper\StringObf\C\StringObf.cs" />
+    <Compile Include="Helper\StringObf\Golang\StringObf.cs" />
+    <Compile Include="Helper\StringObf\JavaScript\StringObf.cs" />
+    <Compile Include="Helper\StringObf\Python\StringObf.cs" />
+    <Compile Include="Helper\StringObf\Rust\StringObf.cs" />
+    <Compile Include="Views\Controls\DotNetSearchResultItem.xaml.cs">
+      <DependentUpon>DotNetSearchResultItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_Baijiahei.xaml.cs">
+      <DependentUpon>Page_Baijiahei.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\WhiteFileSearchResultItem.xaml.cs">
+      <DependentUpon>WhiteFileSearchResultItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_Bin2head.xaml.cs">
+      <DependentUpon>Page_Bin2head.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_Defender_Check.xaml.cs">
+      <DependentUpon>Page_Defender_Check.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_Loader_Build.xaml.cs">
+      <DependentUpon>Page_Loader_Build.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_Network.xaml.cs">
+      <DependentUpon>Page_Network.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_PE2SC.xaml.cs">
+      <DependentUpon>Page_PE2SC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_Ps1_OBF.xaml.cs">
+      <DependentUpon>Page_Ps1_OBF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_RubbishCode.xaml.cs">
+      <DependentUpon>Page_RubbishCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_String_Obf.xaml.cs">
+      <DependentUpon>Page_String_Obf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Page_Update.xaml.cs">
+      <DependentUpon>Page_Update.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CodePreviewWindow.xaml.cs">
+      <DependentUpon>CodePreviewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\Window_About.xaml.cs">
+      <DependentUpon>Window_About.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Resource Include="Themes\Colors\DarkColors.xaml" />
+    <Resource Include="Themes\Colors\LightColors.xaml" />
+    <Resource Include="Themes\CustomWindowStyle.xaml" />
+    <Resource Include="Themes\DarkTheme.xaml" />
+    <Resource Include="Themes\Generic.xaml" />
+    <Resource Include="Themes\LightTheme.xaml" />
+    <Resource Include="Themes\Styles\BasicControlStyles.xaml" />
+    <Resource Include="Themes\Styles\ButtonStyles.xaml" />
+    <Resource Include="Themes\Styles\CalendarStyles.xaml" />
+    <Resource Include="Themes\Styles\ComboBoxStyles.xaml" />
+    <Resource Include="Themes\Styles\ListControlStyles.xaml" />
+    <Resource Include="Themes\Styles\MenuButtonStyles.xaml" />
+    <Resource Include="Themes\Styles\MiscStyles.xaml" />
+    <Resource Include="Themes\Styles\ScrollViewerStyles.xaml" />
+    <Resource Include="Themes\Styles\SliderProgressStyles.xaml" />
+    <Resource Include="Themes\Styles\SpecialStyles.xaml" />
+    <Resource Include="Themes\Styles\TabControlStyles.xaml" />
+    <Resource Include="Themes\Styles\TextInputStyles.xaml" />
+    <Page Include="Views\Controls\DotNetSearchResultItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\Page_Baijiahei.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\WhiteFileSearchResultItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_Bin2head.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_Defender_Check.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_Loader_Build.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_Network.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_PE2SC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_Ps1_OBF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_RubbishCode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_String_Obf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Page_Update.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\CodePreviewWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\Window_About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Helper\AsmResolverLib\AsmResolver.PE\Exceptions\.gitignore" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\qr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\Donut\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

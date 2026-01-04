@@ -1,0 +1,140 @@
+﻿<Page x:Class="Kill_free_toolbox.Views.Pages.Page_Update"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kill_free_toolbox.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      TextOptions.TextFormattingMode="Display"
+
+      Title="Page_Update">
+
+    <Page.Resources>
+        <!-- 更新内容样式 -->
+        <Style x:Key="UpdateTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#FF4A9EFF"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+        
+        <Style x:Key="UpdateSubTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#FF6BB6FF"/>
+            <Setter Property="Margin" Value="0,15,0,8"/>
+        </Style>
+        
+        <Style x:Key="UpdateTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#FFDCDCDC"/>
+            <Setter Property="Margin" Value="0,5,0,5"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="LineHeight" Value="20"/>
+        </Style>
+        
+        <Style x:Key="UpdateCodeStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Foreground" Value="#FF4ECDC4"/>
+            <Setter Property="Background" Value="#FF2D2D2D"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Margin" Value="0,5,0,5"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        
+        <Style x:Key="UpdateListStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#FFDCDCDC"/>
+            <Setter Property="Margin" Value="20,2,0,2"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        
+        <Style x:Key="UpdateImageStyle" TargetType="Image">
+            <Setter Property="Margin" Value="0,10,0,10"/>
+            <Setter Property="Stretch" Value="Uniform"/>
+            <Setter Property="MaxWidth" Value="800"/>
+        </Style>
+        
+        <Style x:Key="UpdateSeparatorStyle" TargetType="Rectangle">
+            <Setter Property="Height" Value="1"/>
+            <Setter Property="Fill" Value="#FF404040"/>
+            <Setter Property="Margin" Value="0,15,0,15"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 页面标题 -->
+        <Border Grid.Row="0" Padding="20,15">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="📢" FontSize="24" Margin="0,0,10,0"/>
+                <TextBlock Text="更新日志" FontSize="20" FontWeight="Bold" Foreground="#FF4A9EFF"/>
+                <TextBlock Text="v1.0.0" FontSize="16" Foreground="#FF888888" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 更新内容区域 -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Margin="20">
+                <!-- 示例：版本更新内容 -->
+                <TextBlock Text="版本 1.0.0 - 2025年9月6日" Style="{StaticResource UpdateTitleStyle}"/>
+                
+                <TextBlock Text="🎉 正式版首次发布版本" Style="{StaticResource UpdateSubTitleStyle}"/>
+                
+                <TextBlock Text="欢迎使用免杀工具箱！这是一个功能强大的工具集，帮助您进行各种安全测试和开发工作。" Style="{StaticResource UpdateTextStyle}"/>
+                
+                <!-- 功能列表 -->
+                <TextBlock Text="✨ 主要功能：" Style="{StaticResource UpdateSubTitleStyle}"/>
+                
+                <TextBlock Text="• 字符串混淆 - 支持多种编程语言的字符串混淆" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• 二进制转头文件 - 将二进制文件转换为各种编程语言的头文件" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• PE文件分析 - 深度分析PE文件结构" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• 白文件搜索 - 快速搜索系统中的白文件" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• 反病毒检测 - 检测文件是否被杀毒软件识别" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• PowerShell混淆 - 混淆PowerShell脚本" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• 加载器生成 - 直接生成免杀加载器" Style="{StaticResource UpdateListStyle}"/>
+                <!-- 代码示例 -->
+                <!--<TextBlock Text="💻 使用示例：" Style="{StaticResource UpdateSubTitleStyle}"/>-->
+                
+                <!--<Border Background="#FF2D2D2D" CornerRadius="4" Padding="1" Margin="0,5,0,5">
+                    <TextBlock Style="{StaticResource UpdateCodeStyle}" Text="// C# 字符串混淆示例&#x0a;string result = StringObf.CSStringObf(&quot;Hello World&quot;);&#x0a;Console.WriteLine(result);"/>
+                </Border>-->
+                
+                <!-- 分隔线 -->
+                <Rectangle Style="{StaticResource UpdateSeparatorStyle}"/>
+                
+ 
+                <!-- 注意事项 -->
+                <TextBlock Text="⚠️ 注意事项" Style="{StaticResource UpdateSubTitleStyle}"/>
+
+                <TextBlock Text="• 软件可能被杀毒软件误报，请添加信任" Style="{StaticResource UpdateListStyle}"/>
+
+                <!-- 图片示例区域 -->
+                <!--<TextBlock Text="🖼️ 界面预览" Style="{StaticResource UpdateSubTitleStyle}"/>-->
+                
+                <!-- 这里可以添加图片，使用Image控件 -->
+                <!-- 
+                <Image Source="/Resources/screenshot.png" Style="{StaticResource UpdateImageStyle}"/>
+                -->
+                
+                <!-- 未来计划 -->
+                <TextBlock Text="🚀 未来计划" Style="{StaticResource UpdateSubTitleStyle}"/>
+                
+                <TextBlock Text="我们正在开发更多功能，包括：" Style="{StaticResource UpdateTextStyle}"/>
+                <TextBlock Text="• 更多编程语言支持" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• 图形化PE分析界面" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• 自动化测试功能" Style="{StaticResource UpdateListStyle}"/>
+                <TextBlock Text="• 插件系统" Style="{StaticResource UpdateListStyle}"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

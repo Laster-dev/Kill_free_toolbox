@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- 深色主题资源字典 -->
+      <!-- 合并颜色定义和样式 -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Colors/DarkColors.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/BasicControlStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/ComboBoxStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/TextInputStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/TabControlStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/ListControlStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/SliderProgressStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/CalendarStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/MiscStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/SpecialStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/MenuButtonStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Kill_free_toolbox;component/Themes/Styles/ScrollViewerStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

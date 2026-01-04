@@ -1,0 +1,59 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- 深色主题颜色定义 -->
+    
+    <!-- 基础背景颜色 -->
+    <SolidColorBrush x:Key="PrimaryBackground" Color="#2E2E2E"/>
+    <!-- 主背景：深灰 -->
+    
+    <SolidColorBrush x:Key="SecondaryBackground" Color="#333333"/>
+    <!-- 次背景：浅深灰 -->
+    
+    <SolidColorBrush x:Key="WindowBackground" Color="#252525"/>
+    <!-- 窗口背景：最深灰 -->
+    
+    <!-- 边框颜色 -->
+    <SolidColorBrush x:Key="BorderBrush" Color="#555555"/>
+    <!-- 描边：中性灰 -->
+    
+    <SolidColorBrush x:Key="SeparatorBrush" Color="#444444"/>
+    <!-- 分割线：深灰 -->
+    
+    <!-- 文本颜色 -->
+    <SolidColorBrush x:Key="PrimaryForeground" Color="White"/>
+    <!-- 主文本：白色 -->
+    
+    <SolidColorBrush x:Key="DisabledForeground" Color="#888888"/>
+    <!-- 禁用：中灰 -->
+    
+    <!-- 交互状态颜色 -->
+    <SolidColorBrush x:Key="HoverBrush" Color="#444444"/>
+    <!-- 悬停：浅深灰 -->
+    
+    <SolidColorBrush x:Key="PressedBrush" Color="#555555"/>
+    <!-- 按压：较浅深灰 -->
+    
+    <SolidColorBrush x:Key="SelectedBrush" Color="#555555"/>
+    <!-- 选中：较浅深灰 -->
+    
+    <!-- 多彩配色：主题色点缀用 -->
+    <SolidColorBrush x:Key="HighlightBrush" Color="#7C3AED"/>
+    <!-- 主色：紫蓝 -->
+    
+    <SolidColorBrush x:Key="SuccessBrush" Color="#10B981"/>
+    <!-- 绿色 -->
+    
+    <SolidColorBrush x:Key="InfoBrush" Color="#3B82F6"/>
+    <!-- 蓝色 -->
+    
+    <SolidColorBrush x:Key="WarningBrush" Color="#F59E0B"/>
+    <!-- 橙色 -->
+    
+    <SolidColorBrush x:Key="ContextMenuBackground" Color="#3F4145"/>
+    <SolidColorBrush x:Key="ContextMenuBorderBrush" Color="#FF868585"/>
+    <SolidColorBrush x:Key="ContextMenuItemBackground" Color="Transparent"/>
+    <SolidColorBrush x:Key="ContextMenuItemForeground" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ContextMenuItemHoverBackground" Color="#3D5CE3"/>
+    
+</ResourceDictionary>

@@ -1,0 +1,14 @@
+<Window x:Class="Kill_free_toolbox.Views.Windows.CodePreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="劫持源代码预览" Height="600" Width="900" Background="Black">
+
+        <ScrollViewer Grid.Row="1" Margin="-1.5">
+        <RichTextBox x:Name="CodeBox" Width="900"
+                         FontFamily="Cascadia Code" FontSize="14"
+                         Background="#FF1E1E1E" Foreground="#FFDCDCDC"
+                         VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+        </ScrollViewer>
+
+</Window>
+
